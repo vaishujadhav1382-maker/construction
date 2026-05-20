@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
+import { Link } from 'react-scroll';
 import heroImg from '../assets/projects-img/WhatsApp Image 2026-05-18 at 10.44.03 AM (1).jpeg';
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 pb-10 overflow-hidden bg-texture">
+    <section id="home" className="relative min-h-screen flex items-center pt-28 sm:pt-24 lg:pt-20 pb-10 overflow-hidden bg-texture">
       {/* Background Blobs */}
       <div className="blob blob-gold w-[300px] h-[300px] -top-10 -right-10 opacity-20"></div>
       <div className="blob blob-accent w-[250px] h-[250px] bottom-0 -left-10 opacity-10"></div>
@@ -46,20 +47,24 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8 lg:mb-10">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 lg:px-8 lg:py-4 bg-charcoal text-white font-black text-[9px] lg:text-[10px] uppercase tracking-[0.2em] rounded-full shadow-2xl shadow-charcoal/20 flex items-center gap-3"
-              >
-                Explore Projects <HiArrowRight />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 lg:px-8 lg:py-4 glass-luxury text-charcoal font-black text-[9px] lg:text-[10px] uppercase tracking-[0.2em] rounded-full border border-charcoal/5"
-              >
-                Contact Us
-              </motion.button>
+              <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 lg:px-8 lg:py-4 bg-charcoal text-white font-black text-[9px] lg:text-[10px] uppercase tracking-[0.2em] rounded-full shadow-2xl shadow-charcoal/20 flex items-center gap-3 cursor-pointer"
+                >
+                  Explore Projects <HiArrowRight />
+                </motion.button>
+              </Link>
+              <Link to="contact" spy={true} smooth={true} offset={-80} duration={500}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 lg:px-8 lg:py-4 glass-luxury text-charcoal font-black text-[9px] lg:text-[10px] uppercase tracking-[0.2em] rounded-full border border-charcoal/5 cursor-pointer"
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
             </div>
 
             {/* Stats */}
