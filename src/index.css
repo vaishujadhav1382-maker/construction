@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-luxury-cream text-charcoal font-inter overflow-x-hidden;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-bold text-charcoal tracking-tight;
+  }
+}
+
+/* Background Texture */
+.bg-texture {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Luxury Glassmorphism */
+.glass-luxury {
+  @apply bg-white/40 backdrop-blur-xl border border-white/60 shadow-glass;
+}
+
+.glass-frosted {
+  @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-luxury;
+}
+
+.glass-gold {
+  @apply bg-luxury-gold/5 backdrop-blur-lg border border-luxury-gold/10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-luxury-cream;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-luxury-gold/40 rounded-full hover:bg-luxury-gold;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Padding */
+.section-padding {
+  @apply py-24 px-6 md:px-12 lg:px-24;
+}
+
+/* Curved Separators */
+.curve-up {
+  clip-path: ellipse(150% 100% at 50% 100%);
+}
+
+.curve-down {
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+/* Gradient Blobs */
+.blob {
+  position: absolute;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.blob-gold {
+  @apply bg-luxury-gold;
+}
+
+.blob-accent {
+  @apply bg-luxury-accent;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

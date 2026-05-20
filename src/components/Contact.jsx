@@ -1,0 +1,105 @@
+import { motion } from 'framer-motion';
+import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
+
+const contactItems = [
+  { icon: HiPhone, title: 'Direct Line', val: '+91 7020624800' },
+  { icon: HiPhone, title: 'Secondary', val: '+91 7770007313' },
+  { icon: HiMail, title: 'Email', val: 'oves15141@gmail.com' },
+  { icon: HiLocationMarker, title: 'Studio', val: 'OAK Constructions, Design & Execution Studio' },
+];
+
+const Contact = () => {
+  return (
+    <section id="contact" className="bg-white relative overflow-hidden py-16 md:py-20">
+      {/* Subtle background blob */}
+      <div className="blob blob-gold w-80 h-80 -top-16 -right-16 opacity-10"></div>
+
+      <div className="container mx-auto px-6 md:px-12">
+
+        {/* Section Header */}
+        <div className="mb-10">
+          <span className="text-luxury-gold font-black tracking-[0.4em] uppercase text-[10px] mb-2 block">
+            Connect With Us
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-charcoal tracking-tighter leading-tight">
+            Let's Build Your <span className="text-luxury-gold italic">Next Legacy</span>
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-8 items-start">
+
+          {/* Left — compact contact cards */}
+          <div className="lg:col-span-2 space-y-3">
+            {contactItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass-luxury px-5 py-4 rounded-2xl flex items-center gap-4 group hover:border-luxury-gold/30 transition-all"
+              >
+                <div className="w-10 h-10 flex-shrink-0 bg-luxury-gold/10 rounded-xl flex items-center justify-center text-luxury-gold group-hover:bg-luxury-gold group-hover:text-white transition-all duration-400">
+                  <item.icon size={18} />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-0.5">{item.title}</h4>
+                  <p className="text-charcoal font-bold text-sm truncate">{item.val}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right — compact form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-3 glass-luxury p-8 md:p-10 rounded-[2.5rem] border-white/80 shadow-2xl"
+          >
+            <form className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
+                <div className="space-y-2">
+                  <label className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Full Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    className="w-full bg-charcoal/5 border-none rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-luxury-gold/50 focus:outline-none transition-all placeholder:text-slate-300 font-bold text-sm"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    className="w-full bg-charcoal/5 border-none rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-luxury-gold/50 focus:outline-none transition-all placeholder:text-slate-300 font-bold text-sm"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Your Vision</label>
+                <textarea
+                  rows="4"
+                  placeholder="Tell us about your architectural dream..."
+                  className="w-full bg-charcoal/5 border-none rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-luxury-gold/50 focus:outline-none transition-all placeholder:text-slate-300 font-bold text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-charcoal text-white font-black py-4 rounded-2xl uppercase tracking-[0.3em] text-[10px] transition-all shadow-xl shadow-charcoal/20 cursor-pointer"
+              >
+                Initiate Conversation
+              </motion.button>
+            </form>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
