@@ -40,7 +40,7 @@ const LoadingScreen = () => (
         </span>
       </div>
     </motion.div>
-    
+
     <div className="w-64 h-[1px] bg-charcoal/5 rounded-full overflow-hidden relative">
       <motion.div
         initial={{ x: '-100%' }}

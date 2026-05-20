@@ -81,13 +81,6 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-charcoal text-white px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-charcoal/10"
-            >
-              Get In Touch
-            </motion.button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -155,26 +148,6 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Bottom CTA */}
-            <div className="px-8 pb-10">
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="w-full bg-charcoal text-white py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] shadow-xl shadow-charcoal/20 hover:bg-luxury-gold transition-colors duration-500 cursor-pointer"
-                >
-                  Get In Touch
-                </motion.button>
-              </Link>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
