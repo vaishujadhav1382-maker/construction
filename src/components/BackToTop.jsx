@@ -35,7 +35,7 @@ const BackToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-10 right-10 w-14 h-14 glass-luxury text-charcoal rounded-full flex items-center justify-center shadow-2xl z-[55] border-white/80"
+          className="fixed bottom-10 right-10 w-14 h-14 glass-luxury text-charcoal rounded-full flex items-center justify-center shadow-2xl z-30 border-white/80"
         >
           <HiArrowUp size={24} className="text-luxury-gold" />
         </motion.button>
