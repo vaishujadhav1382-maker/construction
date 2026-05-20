@@ -6,7 +6,7 @@ const About = () => {
     <section id="about" className="section-padding bg-white relative overflow-hidden">
       {/* Background Shapes */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-luxury-beige/50 rounded-full blur-[100px] -z-10"></div>
-      
+
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left: Asymmetrical Image Layout */}
@@ -18,13 +18,13 @@ const About = () => {
               transition={{ duration: 1 }}
               className="relative z-10 rounded-[2rem] sm:rounded-[3rem] lg:rounded-[5rem] overflow-hidden shadow-2xl border-[6px] sm:border-[12px] border-luxury-beige"
             >
-              <img 
-                src={aboutImg} 
-                alt="OAK Constructions" 
+              <img
+                src={aboutImg}
+                alt="OAK Constructions"
                 className="w-full h-[350px] sm:h-[450px] lg:h-[650px] object-cover hover:scale-110 transition-transform duration-1000"
               />
             </motion.div>
-            
+
             {/* Overlay Glass Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -40,9 +40,9 @@ const About = () => {
             </motion.div>
 
             {/* Decorative Grid Pattern */}
-            <div className="absolute top-10 -left-10 w-40 h-40 opacity-10 hidden sm:block" style={{ 
-              backgroundImage: 'radial-gradient(circle, #D4AF37 2px, transparent 2px)', 
-              backgroundSize: '20px 20px' 
+            <div className="absolute top-10 -left-10 w-40 h-40 opacity-10 hidden sm:block" style={{
+              backgroundImage: 'radial-gradient(circle, #D4AF37 2px, transparent 2px)',
+              backgroundSize: '20px 20px'
             }}></div>
           </div>
 

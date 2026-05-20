@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  HiOfficeBuilding, HiHome, HiTruck, HiPencilAlt, 
-  HiLightningBolt, HiColorSwatch, HiCog, HiCollection 
+import {
+  HiOfficeBuilding, HiHome, HiTruck, HiPencilAlt,
+  HiLightningBolt, HiColorSwatch, HiCog, HiCollection
 } from 'react-icons/hi';
 
 const services = [
@@ -51,13 +51,12 @@ const Services = () => {
                 initial={{ opacity: 0, y: 50 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`glass-luxury p-10 rounded-[3rem] group relative overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-luxury-gold/5 ${
-                  i % 2 !== 0 ? 'lg:translate-y-12' : ''
-                } ${isHiddenOnMobile ? 'hidden md:block' : ''}`}
+                className={`glass-luxury p-10 rounded-[3rem] group relative overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-luxury-gold/5 ${i % 2 !== 0 ? 'lg:translate-y-12' : ''
+                  } ${isHiddenOnMobile ? 'hidden md:block' : ''}`}
               >
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-luxury-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
+
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-luxury-gold mb-8 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-700 shadow-sm transform group-hover:rotate-12">
                     <service.icon size={32} />

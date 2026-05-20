@@ -46,9 +46,8 @@ const Gallery = () => {
                 initial={{ opacity: 0, y: 30 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative group overflow-hidden rounded-[3rem] break-inside-avoid shadow-luxury border border-charcoal/5 ${
-                  isHiddenOnMobile ? 'hidden sm:block' : ''
-                }`}
+                className={`relative group overflow-hidden rounded-[3rem] break-inside-avoid shadow-luxury border border-charcoal/5 ${isHiddenOnMobile ? 'hidden sm:block' : ''
+                  }`}
               >
                 <img
                   src={img}
