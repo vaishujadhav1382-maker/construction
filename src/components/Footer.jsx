@@ -77,8 +77,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 text-center text-slate-500 text-[9px] uppercase tracking-[0.4em] font-black">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-[9px] uppercase tracking-[0.4em] font-black">
           <p>© {new Date().getFullYear()} OAK Constructions. All Rights Reserved.</p>
+          <a href="/admin/login" className="hover:text-luxury-gold transition-colors text-white/40">Admin Login</a>
         </div>
       </div>
     </footer>

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 // Components
 import Navbar from './components/Navbar';
@@ -13,7 +15,16 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
-import BackToTop from './components/BackToTop';
+
+// Admin Components
+import Login from './admin/Login';
+import Dashboard from './admin/Dashboard';
+import ProjectsAdmin from './admin/ProjectsAdmin';
+import GalleryAdmin from './admin/GalleryAdmin';
+import ReviewsAdmin from './admin/ReviewsAdmin';
+import ProtectedRoute from './admin/ProtectedRoute';
+import Sidebar from './admin/Sidebar';
+import ProjectDetails from './components/ProjectDetails';
 
 const LoadingScreen = () => (
   <motion.div
@@ -53,7 +64,7 @@ const LoadingScreen = () => (
   </motion.div>
 );
 
-function App() {
+const MainSite = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -88,10 +99,45 @@ function App() {
             <Contact />
           </main>
           <Footer />
-          <BackToTop />
         </motion.div>
       )}
     </div>
+  );
+};
+
+const AdminLayout = ({ children }) => (
+  <div className="flex min-h-screen bg-[#FDFBF7]">
+    <Sidebar />
+    <div className="flex-1 overflow-auto min-h-screen ml-0 sm:ml-64 p-4 md:p-8">
+      {children}
+    </div>
+  </div>
+);
+
+function App() {
+  return (
+    <>
+      <Toaster position="top-right" />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainSite />} />
+          <Route path="/projects/:slug" element={<ProjectDetails />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/*" element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/projects" element={<ProjectsAdmin />} />
+                  <Route path="/gallery" element={<GalleryAdmin />} />
+                  <Route path="/reviews" element={<ReviewsAdmin />} />
+                </Routes>
+              </AdminLayout>
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
